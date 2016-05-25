@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}My_Quiz{% endblock %}</title>
+    </head>
+    <body>
+        <div id="sidebar">
+            {% block sidebar %}
+            <ul>
+                <li><a href="{{ path('index') }}">index</a></li>
+                <li><a href="{{ path('login') }}">connexion</a></li>
+                <li><a href="{{ path('inscription') }}">inscription</a></li>
+                {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                    <li><a href="{{ path('add') }}">Ajouter une question</a></li>
+                    <li><a href="{{ path('addC') }}">Ajouter une Categorie</a></li>
+                    <!-- <li><a href="{{ path('modif') }}">modifier profil</a></li> -->
+                    <li><a href='{{ path("logout") }}'>Deconnexion</a></li>
+                {% endif %}
+            </ul>
+            {% endblock %}
+        </div>
+
+        <div id="content">
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>

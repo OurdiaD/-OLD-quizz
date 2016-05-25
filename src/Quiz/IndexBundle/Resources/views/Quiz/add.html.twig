@@ -1,0 +1,10 @@
+{% extends 'QuizIndexBundle::base.html.twig' %}
+
+{% block body %}
+<h1>Nouveau</h1>
+<form method='post' {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type='submit' class='btn btn-primary' />
+</form>
+
+{% endblock %}

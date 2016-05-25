@@ -1,0 +1,14 @@
+{% extends 'QuizIndexBundle::base.html.twig' %}
+
+{% block body %}
+<h1>Ajouter Categorie</h1>
+{% for message in app.session.flashbag.get('info') %}
+        <p>Message flash : {{ message }}</p>
+      {% endfor %}
+
+<form method='post' {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type='submit' name='valid' class='btn btn-primary' />
+</form>
+
+{% endblock %}

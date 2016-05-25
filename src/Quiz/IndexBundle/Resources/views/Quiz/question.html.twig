@@ -1,0 +1,15 @@
+{% extends 'QuizIndexBundle::base.html.twig' %}
+
+{% block body %}
+<h1>question</h1>
+{% for message in app.session.flashbag.get('info') %}
+        <p>Message flash : {{ message }}</p>
+      {% endfor %}
+<p>{{ label }}</p>
+<form method='post' {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type='submit' name='valid' class='btn btn-primary' />
+    <input type='submit' name='next' class='btn btn-primary' value='Suivant' />
+</form>
+
+{% endblock %}
